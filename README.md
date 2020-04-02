@@ -317,7 +317,7 @@ plot_final<-Df %>%
     theme(plot.title = element_text(hjust = 0.5))
 ``` 
 
-![alt text](https://github.com/CESARMALMSTEEN/R/blob/master/1.jpeg) 
+![Screenshot](1.jpeg)
   
 ```r
  ggplot(plot_outros, aes(x = reorder(variaveis, +n),y=n, fill = as.factor(n))) +
