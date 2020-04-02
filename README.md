@@ -1,12 +1,5 @@
 # "Projeto Inclusão Escolar"
 
-
-
-```{r global_options, include=FALSE}
-knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE)
-
-```
- 
   Não há dúvidas de que uma das ferramentas mais importantes na educação é a produção de conhecimento de forma acessível e sistematizada, principalmente. Essa característica de rigor sistemático possibilita a geração de conhecimento e descrição estatística, por exemplo, da população educacional de uma cidade. Nessa direção a Lei No 13.005 de junho de 2014, de forma orientadora, descreve metas e estratégias para o desenvolvimento do Plano Nacional de Educação (PNE). Entretanto, há grande dificuldade de promover as ações estratégicas fomentadas no PNE por parte dos profissionais da Educação. Portanto, neste estudo questiona-se: quais variáveis que impedem a implantação das estratégias? Assim, este projeto tem o objetivo primordial de identificar variáveis de impacto ao sucesso de implantação das estratégias da Meta 4 do PNE. 
   
   Para isso foram identificadas diversas variáveis estruturais da escola, dos profissionais e atitudinais. Foi aplicado um questionário diretamente aos professores e auxiliares que trabalham com as crianças público da educação inclusiva de uma cidade da Região Metropolitana de Belo Horizonte-MG. Como resultado obteve-se um amplo diagnóstico da situação da educação inclusiva do município. Este tipo de pesquisa contribui e impacta as ações das políticas públicas da própria região investigada, pois devido às dimensões e contradições sociais do território brasileiro, onde contextos de desenvolvimento impactam na vida dos cidadãos, o diagnóstico específico da cidade mostra-se de alta relevância.
