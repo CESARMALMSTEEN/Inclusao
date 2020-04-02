@@ -329,7 +329,7 @@ plot_final<-Df %>%
    coord_flip() 
 ```
 
-![alt text](https://github.com/CESARMALMSTEEN/R/blob/master/2.jpeg)
+![Screenshot](2.jpeg)
 
 Avaliando e combinando os histogramas das variáveis INFANTIL e FUNDAMENTAL
 
@@ -421,7 +421,7 @@ prof_infantil <- filter_all(df_dados2, any_vars(str_detect(., pattern = "infanti
    grid.arrange(g1, g2, g3, ncol=3)
    
 ```
-![alt text](https://github.com/CESARMALMSTEEN/R/blob/master/3.jpeg)
+![Screenshot](3.jpeg)
 
 
 
