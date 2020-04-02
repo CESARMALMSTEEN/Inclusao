@@ -54,7 +54,7 @@ df_dados[df_dados == "duvida"] <- "nao sei"
 
 Utilizado função para remoção dos acentos das strings
 
-```{r echo=TRUE}
+```r
 RemoveAcentos <- function(textoComAcentos) {
   
  
@@ -83,7 +83,7 @@ df_dados <- df_dados %>%
 
 Associando colunas para o tipo fator
 
-```{r echo=TRUE}
+```r
 df_dados$Inclusão <- as.factor(df_dados$Inclusão)
 df_dados$AEE <- as.factor(df_dados$AEE)
 df_dados$Plano.Pedagogico <- as.factor(df_dados$Plano.Pedagogico)
@@ -102,7 +102,7 @@ df_dados[df_dados == "acompanhamento familiar e psico"] <- "acompanhamento famil
 
 Subdividindo coluna INDISPENSAVEL em 6
 
-```{r echo=TRUE}
+```r
 df_dados2 <- df_dados %>% 
   separate(
     col = Indispensavel, 
@@ -114,7 +114,7 @@ df_dados2 <- df_dados %>%
 
 Corrigindo repetições psico e estrutura familiar
 
-```{r echo=TRUE}
+```r
 df_dados2[df_dados2 == " acompanhamento psico"] <- "psico"
 df_dados2[df_dados2 == "acompanhamento psico"] <- "psico"
 
@@ -125,7 +125,7 @@ df_dados2[df_dados2 == " quantidade de profissionais"] <- "disponibilidade de pr
 
 Fatorizando as novas colunas INDISP
 
-```{r echo=TRUE}
+```r
 df_dados2$indisp_1 <- as.factor(df_dados2$indisp_1)
 df_dados2$indisp_2 <- as.factor(df_dados2$indisp_2)
 df_dados2$indisp_3 <- as.factor(df_dados2$indisp_3)
@@ -136,7 +136,7 @@ df_dados2$indisp_6 <- as.factor(df_dados2$indisp_6)
 
 Subdividindo as colunas TIPO, HORARIO, DISPONIBILIDADE e fatorizando-as
 
-```{r echo=TRUE}
+```r
 df_dados2 <- df_dados2 %>% 
   separate(
     col = Tipo, 
@@ -179,7 +179,7 @@ df_dados2$Disp_3 <- as.factor(df_dados2$Disp_3)
 
 Combinando e contando as repetições em INDISPENSAVEL
 
-```{r echo=TRUE}
+```r
 didatica <- df_dados2 %>% 
      filter_all(any_vars(str_detect(., pattern = "didatica"))) %>% 
      count(., sort = TRUE)
@@ -288,7 +288,7 @@ menos <- df_dados2 %>%
 
 Criando o dataframe com as variáveis indispensáveis e sua porcentagem de peso
 
-```{r echo=TRUE}
+```r
 Df <- rbind(didatica, qualificacao, estrutura, material, psico, familiar, auxiliar, sala, respeito, amor, investimento, integral, prioritario, vontade, disp_profissional, efetividade, horario_diferenciado, lei, normas, planejamento, interdisciplinar, multidisciplinar,semed, divulgacao, financeiro, menos )
 Df<-Df %>%
   mutate(prop = n / sum(n), prop = scales::percent(prop))
@@ -300,7 +300,7 @@ glimpse(Df)
 
 Plotagem das variáveis indispensáveis
 
-```{r echo=TRUE}
+```r
 plot_final<-Df %>%
   arrange_(~ desc(n)) %>%
   group_by_(~ n) %>%
@@ -319,7 +319,7 @@ plot_final<-Df %>%
 
 ![alt text](https://github.com/CESARMALMSTEEN/R/blob/master/1.jpeg) 
   
-```{r}
+```r
  ggplot(plot_outros, aes(x = reorder(variaveis, +n),y=n, fill = as.factor(n))) +
    geom_histogram(stat = "identity") +
    labs(fill = "Votos", x="Atributos", title="Outras soluções indispensáveis")+
@@ -333,7 +333,7 @@ plot_final<-Df %>%
 
 Avaliando e combinando os histogramas das variáveis INFANTIL e FUNDAMENTAL
 
-```{r echo=TRUE}
+```r
  #INFANTIL
    prof_infantil <- filter_all(df_dados2, any_vars(str_detect(., pattern = "infantil")))
    prof_infantil_plot <- subset(prof_infantil, select = c(Inclusão, AEE, Plano.Pedagogico, Estrutura, Diretriz))
@@ -357,7 +357,7 @@ Avaliando e combinando os histogramas das variáveis INFANTIL e FUNDAMENTAL
 
 Análise do questionamento comparando Conhecimento de lei, funções do AEE e Leitura PNE
 
-```{r echo=TRUE}
+```r
 prof_infantil <- filter_all(df_dados2, any_vars(str_detect(., pattern = "infantil")))
    
    lei<-prof_infantil %>%
