@@ -4,7 +4,7 @@
   
   Para isso foram identificadas diversas variáveis estruturais da escola, dos profissionais e atitudinais. Foi aplicado um questionário diretamente aos professores e auxiliares que trabalham com as crianças público da educação inclusiva de uma cidade da Região Metropolitana de Belo Horizonte-MG. Como resultado obteve-se um amplo diagnóstico da situação da educação inclusiva do município. Este tipo de pesquisa contribui e impacta as ações das políticas públicas da própria região investigada, pois devido às dimensões e contradições sociais do território brasileiro, onde contextos de desenvolvimento impactam na vida dos cidadãos, o diagnóstico específico da cidade mostra-se de alta relevância.
 
-```{r}
+```r
 library(readr)
 library(readxl)
 library(tidyr)
@@ -20,7 +20,7 @@ library(lsr)
 
 Importação dos dados salvos em Excel
 
-```{r}
+```r
 df_dados <- data.frame(read_excel("dados.xlsx"))
 class(df_dados)
 ```
@@ -35,7 +35,7 @@ Todos os dados importados continham anormalidades que foram tratadas caso a caso
 -Convertido todos os valores para formato minusculo
 -Substituído "duvida" por "nao sei"
 
-```{r echo=TRUE}
+```r
 df_dados$...7 <- NULL
 df_dados$...18 <- NULL
 df_dados[df_dados == "x"] <- NA
